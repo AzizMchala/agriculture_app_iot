@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_secondary"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/analytics_title" android:textColor="@color/text_primary"
+            android:textSize="22sp" android:fontFamily="sans-serif-bold"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" android:text="@string/analytics_subtitle"
+            android:textColor="@color/text_secondary" android:textSize="13sp"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabSensors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:tabMode="scrollable"
+            app:tabIndicatorColor="@color/primary"
+            app:tabSelectedTextColor="@color/primary"
+            app:tabTextColor="@color/text_secondary"
+            app:tabBackground="@android:color/transparent"
+            app:tabIndicatorHeight="3dp"
+            app:tabRippleColor="@color/primary_surface"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="@color/background_primary"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="12dp">
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/lineChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"/>
+                <TextView android:id="@+id/tvNoData"
+                    android:layout_width="match_parent" android:layout_height="280dp"
+                    android:gravity="center" android:text="@string/analytics_no_data"
+                    android:textColor="@color/text_tertiary" android:textSize="14sp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Stats -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="12dp" android:orientation="horizontal">
+            <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginEnd="4dp"
+                app:cardBackgroundColor="@color/background_primary" app:cardCornerRadius="12dp" app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="12dp" android:gravity="center">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/analytics_min" android:textColor="@color/text_tertiary" android:textSize="11sp"/>
+                    <TextView android:id="@+id/tvMinValue" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp" android:text="--" android:textColor="@color/status_info"
+                        android:textSize="18sp" android:fontFamily="sans-serif-bold"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginStart="4dp" android:layout_marginEnd="4dp"
+                app:cardBackgroundColor="@color/background_primary" app:cardCornerRadius="12dp" app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="12dp" android:gravity="center">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/analytics_max" android:textColor="@color/text_tertiary" android:textSize="11sp"/>
+                    <TextView android:id="@+id/tvMaxValue" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp" android:text="--" android:textColor="@color/status_danger"
+                        android:textSize="18sp" android:fontFamily="sans-serif-bold"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginStart="4dp"
+                app:cardBackgroundColor="@color/background_primary" app:cardCornerRadius="12dp" app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="12dp" android:gravity="center">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/analytics_avg" android:textColor="@color/text_tertiary" android:textSize="11sp"/>
+                    <TextView android:id="@+id/tvAvgValue" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp" android:text="--" android:textColor="@color/primary"
+                        android:textSize="18sp" android:fontFamily="sans-serif-bold"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <TextView android:id="@+id/tvDataPoints" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" android:layout_marginBottom="16dp"
+            android:textColor="@color/text_tertiary" android:textSize="11sp"/>
+    </LinearLayout>
+</ScrollView>

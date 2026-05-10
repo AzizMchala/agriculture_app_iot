@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_secondary"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/controls_title"
+            android:textColor="@color/text_primary"
+            android:textSize="22sp"
+            android:fontFamily="sans-serif-bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/controls_subtitle"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"/>
+
+        <!-- Lamp -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/background_primary"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+                <View android:layout_width="44dp" android:layout_height="44dp"
+                    android:background="@drawable/bg_icon_circle"/>
+                <ImageView android:layout_width="44dp" android:layout_height="44dp"
+                    android:layout_marginStart="-44dp" android:padding="10dp"
+                    android:src="@drawable/ic_lamp" android:contentDescription="lamp"/>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/actuator_lamp" android:textColor="@color/text_primary"
+                        android:textSize="15sp" android:fontFamily="sans-serif-medium"/>
+                    <TextView android:id="@+id/tvLampState" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_marginTop="2dp"
+                        android:text="@string/state_off" android:textColor="@color/status_danger" android:textSize="12sp"/>
+                </LinearLayout>
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/switchLamp" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    app:thumbTint="@color/switch_thumb_colors" app:trackTint="@color/switch_track_colors"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Fan -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@color/background_primary"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+                <View android:layout_width="44dp" android:layout_height="44dp"
+                    android:background="@drawable/bg_icon_circle"/>
+                <ImageView android:layout_width="44dp" android:layout_height="44dp"
+                    android:layout_marginStart="-44dp" android:padding="10dp"
+                    android:src="@drawable/ic_fan" android:contentDescription="fan"/>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/actuator_fan" android:textColor="@color/text_primary"
+                        android:textSize="15sp" android:fontFamily="sans-serif-medium"/>
+                    <TextView android:id="@+id/tvFanState" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_marginTop="2dp"
+                        android:text="@string/state_off" android:textColor="@color/status_danger" android:textSize="12sp"/>
+                </LinearLayout>
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/switchFan" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    app:thumbTint="@color/switch_thumb_colors" app:trackTint="@color/switch_track_colors"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Valve -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="@color/background_primary"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+                <View android:layout_width="44dp" android:layout_height="44dp"
+                    android:background="@drawable/bg_icon_circle"/>
+                <ImageView android:layout_width="44dp" android:layout_height="44dp"
+                    android:layout_marginStart="-44dp" android:padding="10dp"
+                    android:src="@drawable/ic_valve" android:contentDescription="valve"/>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/actuator_valve" android:textColor="@color/text_primary"
+                        android:textSize="15sp" android:fontFamily="sans-serif-medium"/>
+                    <TextView android:id="@+id/tvValveState" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_marginTop="2dp"
+                        android:text="@string/state_off" android:textColor="@color/status_danger" android:textSize="12sp"/>
+                </LinearLayout>
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/switchValve" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    app:thumbTint="@color/switch_thumb_colors" app:trackTint="@color/switch_track_colors"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Lock -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/background_primary"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+                <View android:layout_width="44dp" android:layout_height="44dp"
+                    android:background="@drawable/bg_icon_circle"/>
+                <ImageView android:layout_width="44dp" android:layout_height="44dp"
+                    android:layout_marginStart="-44dp" android:padding="10dp"
+                    android:src="@drawable/ic_lock" android:contentDescription="lock"/>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="@string/actuator_lock" android:textColor="@color/text_primary"
+                        android:textSize="15sp" android:fontFamily="sans-serif-medium"/>
+                    <TextView android:id="@+id/tvLockState" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_marginTop="2dp"
+                        android:text="@string/state_off" android:textColor="@color/status_danger" android:textSize="12sp"/>
+                </LinearLayout>
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/switchLock" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    app:thumbTint="@color/switch_thumb_colors" app:trackTint="@color/switch_track_colors"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

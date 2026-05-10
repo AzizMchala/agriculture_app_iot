@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <!-- House body -->
+    <path
+        android:fillColor="@color/accent_primary"
+        android:pathData="M60,15L15,55v50h35V75h20v30h35V55z"/>
+    <!-- Roof accent -->
+    <path
+        android:fillColor="@color/accent_secondary"
+        android:pathData="M60,15L15,55h90z"/>
+    <!-- Door -->
+    <path
+        android:fillColor="@color/background_primary"
+        android:pathData="M50,75h20v30H50z"/>
+    <!-- Window left -->
+    <path
+        android:fillColor="@color/status_warning"
+        android:pathData="M25,62h18v15H25z"/>
+    <!-- Window right -->
+    <path
+        android:fillColor="@color/status_warning"
+        android:pathData="M77,62h18v15H77z"/>
+    <!-- WiFi signal -->
+    <path
+        android:fillColor="@color/accent_secondary"
+        android:pathData="M60,30 m-3,0 a3,3 0,1 1,6 0 a3,3 0,1 1,-6 0"/>
+</vector>

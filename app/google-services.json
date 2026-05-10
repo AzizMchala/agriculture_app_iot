@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "762297582163",
+    "firebase_url": "https://pfemaisonintelligente-default-rtdb.firebaseio.com",
+    "project_id": "pfemaisonintelligente",
+    "storage_bucket": "pfemaisonintelligente.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762297582163:android:dfeb845fa7b71ef9d9bca6",
+        "android_client_info": {
+          "package_name": "com.example.agri_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6Vb5QDruSYb-Refuim4krvgqOCJ9nOW0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
