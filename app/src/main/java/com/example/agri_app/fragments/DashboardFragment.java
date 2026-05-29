@@ -24,7 +24,7 @@ import java.util.Locale;
 
 public class DashboardFragment extends Fragment {
 
-    private TextView tvTempValue, tvHumValue, tvPressValue, tvLightValue;
+    private TextView tvTempValue, tvHumValue, tvPressValue, tvLightValue, tvSoilValue;
     private TextView tvLockStatus, tvLampStatus, tvFanStatus, tvValveStatus;
     private TextView tvLastUpdate;
     private SwipeRefreshLayout swipeRefresh;
@@ -45,6 +45,7 @@ public class DashboardFragment extends Fragment {
         tvHumValue = view.findViewById(R.id.tvHumValue);
         tvPressValue = view.findViewById(R.id.tvPressValue);
         tvLightValue = view.findViewById(R.id.tvLightValue);
+        tvSoilValue = view.findViewById(R.id.tvSoilValue);
         tvLockStatus = view.findViewById(R.id.tvLockStatus);
         tvLampStatus = view.findViewById(R.id.tvLampStatus);
         tvFanStatus = view.findViewById(R.id.tvFanStatus);
@@ -83,6 +84,7 @@ public class DashboardFragment extends Fragment {
                 Float hum = snapshot.child(Constants.KEY_HUMIDITE).getValue(Float.class);
                 Float press = snapshot.child(Constants.KEY_PRESSION).getValue(Float.class);
                 Float lux = snapshot.child(Constants.KEY_LUMINOSITE).getValue(Float.class);
+                Float soil = snapshot.child(Constants.KEY_HUMIDITE_SOL).getValue(Float.class);
 
                 if (temp != null) {
                     tvTempValue.setText(String.format(Locale.getDefault(), "%.1f°", temp));
@@ -99,6 +101,10 @@ public class DashboardFragment extends Fragment {
                 if (lux != null) {
                     tvLightValue.setText(String.format(Locale.getDefault(), "%.0f", lux));
                     animateValue(tvLightValue);
+                }
+                if (soil != null) {
+                    tvSoilValue.setText(String.format(Locale.getDefault(), "%.1f%%", soil));
+                    animateValue(tvSoilValue);
                 }
 
                 // Update timestamp

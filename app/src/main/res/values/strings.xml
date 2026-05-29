@@ -34,6 +34,7 @@
     <string name="sensor_humidity">Humidité</string>
     <string name="sensor_pressure">Pression</string>
     <string name="sensor_light">Luminosité</string>
+    <string name="sensor_soil_humidity">Humidité Sol</string>
     <string name="unit_celsius">°C</string>
     <string name="unit_percent">%</string>
     <string name="unit_hpa">hPa</string>
@@ -81,6 +82,32 @@
     <string name="settings_logout">Déconnexion</string>
     <string name="settings_lock_log">Journal d\'accès serrure</string>
     <string name="settings_last_access">Dernier accès :</string>
+
+    <!-- Thresholds (Seuils) -->
+    <string name="threshold_section_title">Configuration des Seuils</string>
+    <string name="threshold_section_subtitle">Définissez les valeurs de déclenchement automatique</string>
+    <string name="threshold_temp_title">Température → Ventilateur</string>
+    <string name="threshold_temp_desc">Le ventilateur s\'active automatiquement</string>
+    <string name="threshold_lux_title">Luminosité → Lampe</string>
+    <string name="threshold_lux_desc">La lampe s\'active automatiquement</string>
+    <string name="threshold_soil_title">Humidité Sol → Vanne</string>
+    <string name="threshold_soil_desc">La vanne d\'arrosage s\'active automatiquement</string>
+    <string name="threshold_high">Seuil haut</string>
+    <string name="threshold_low">Seuil bas</string>
+    <string name="threshold_high_hint_temp">ex: 28.0</string>
+    <string name="threshold_low_hint_temp">ex: 20.0</string>
+    <string name="threshold_high_hint_lux">ex: 25000</string>
+    <string name="threshold_low_hint_lux">ex: 10000</string>
+    <string name="threshold_high_hint_soil">ex: 60.0</string>
+    <string name="threshold_low_hint_soil">ex: 30.0</string>
+    <string name="threshold_apply">Appliquer les Seuils</string>
+    <string name="threshold_applied">✓ Seuils appliqués avec succès !</string>
+    <string name="threshold_error_invalid">Veuillez entrer des valeurs numériques valides</string>
+    <string name="threshold_error_range">Le seuil haut doit être supérieur au seuil bas</string>
+    <string name="threshold_current_value">Valeur actuelle :</string>
+    <string name="threshold_actuator_on">DÉCLENCHÉ</string>
+    <string name="threshold_actuator_off">EN VEILLE</string>
+    <string name="threshold_mode_auto">Mode Automatique</string>
 
     <!-- General -->
     <string name="loading">Chargement…</string>

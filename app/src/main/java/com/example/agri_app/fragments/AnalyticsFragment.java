@@ -42,10 +42,11 @@ public class AnalyticsFragment extends Fragment {
     private final List<Entry> humEntries = new ArrayList<>();
     private final List<Entry> pressEntries = new ArrayList<>();
     private final List<Entry> lightEntries = new ArrayList<>();
+    private final List<Entry> soilEntries = new ArrayList<>();
     private int dataIndex = 0;
     private int selectedTab = 0;
 
-    private int colorTemp, colorHum, colorPress, colorLight;
+    private int colorTemp, colorHum, colorPress, colorLight, colorSoil;
 
     @Nullable
     @Override
@@ -69,6 +70,7 @@ public class AnalyticsFragment extends Fragment {
         colorHum = ContextCompat.getColor(requireContext(), R.color.humidity_start);
         colorPress = ContextCompat.getColor(requireContext(), R.color.pressure_start);
         colorLight = ContextCompat.getColor(requireContext(), R.color.light_start);
+        colorSoil = Color.parseColor("#795548");
 
         setupTabs();
         setupChart();
@@ -80,6 +82,7 @@ public class AnalyticsFragment extends Fragment {
         tabSensors.addTab(tabSensors.newTab().setText(getString(R.string.sensor_humidity)));
         tabSensors.addTab(tabSensors.newTab().setText(getString(R.string.sensor_pressure)));
         tabSensors.addTab(tabSensors.newTab().setText(getString(R.string.sensor_light)));
+        tabSensors.addTab(tabSensors.newTab().setText(getString(R.string.sensor_soil_humidity)));
 
         tabSensors.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -147,18 +150,20 @@ public class AnalyticsFragment extends Fragment {
                 Float hum = snapshot.child(Constants.KEY_HUMIDITE).getValue(Float.class);
                 Float press = snapshot.child(Constants.KEY_PRESSION).getValue(Float.class);
                 Float lux = snapshot.child(Constants.KEY_LUMINOSITE).getValue(Float.class);
+                Float soil = snapshot.child(Constants.KEY_HUMIDITE_SOL).getValue(Float.class);
 
-                float x = dataIndex * 5f; // 5 seconds interval
+                float x = dataIndex * 5f;
                 if (temp != null) tempEntries.add(new Entry(x, temp));
                 if (hum != null) humEntries.add(new Entry(x, hum));
                 if (press != null) pressEntries.add(new Entry(x, press));
                 if (lux != null) lightEntries.add(new Entry(x, lux));
+                if (soil != null) soilEntries.add(new Entry(x, soil));
 
-                // Trim to max points
                 trimList(tempEntries);
                 trimList(humEntries);
                 trimList(pressEntries);
                 trimList(lightEntries);
+                trimList(soilEntries);
 
                 dataIndex++;
                 updateChart();
@@ -199,6 +204,12 @@ public class AnalyticsFragment extends Fragment {
                 label = getString(R.string.sensor_light);
                 color = colorLight;
                 unit = " lx";
+                break;
+            case 4:
+                entries = soilEntries;
+                label = getString(R.string.sensor_soil_humidity);
+                color = colorSoil;
+                unit = "%";
                 break;
             default:
                 entries = tempEntries;
